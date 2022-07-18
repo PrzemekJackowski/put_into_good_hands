@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.views import View
 
-from put_into_good_hands.models import Donation
+from put_into_good_hands.models import Donation, Institution
 
 
 class LandingPageView(View):
@@ -17,7 +17,11 @@ class LandingPageView(View):
             if gift.institution not in institutions:
                 institutions.append(gift.institution.name)
         count_institutions = len(institutions)
-        return render(request, "index.html", {"quantity": quantity, "count_institutions": count_institutions})
+        fundations = Institution.objects.filter(type=1)
+        organizations = Institution.objects.filter(type=2)
+        locals = Institution.objects.filter(type=3)
+        return render(request, "index.html", {"quantity": quantity, "count_institutions": count_institutions,
+                                            "fundations": fundations, "organizations": organizations, "locals": locals})
 
 
 class AddDonationView(View):

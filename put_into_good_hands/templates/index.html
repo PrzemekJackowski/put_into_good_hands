@@ -55,7 +55,7 @@
         </div>
       </div>
 
-      <a href="#" class="btn btn--large">Załóż konto</a>
+      <a href="/register" class="btn btn--large">Załóż konto</a>
     </section>
 
     <section id="about-us" class="about-us">
@@ -83,29 +83,29 @@
         <ul class="help--slides-items">
           <li>
             <div class="col">
-              <div class="title">Fundacja "Dbam o Zdrowie"</div>
-              <div class="subtitle">Cel i misja: Pomoc dzieciom z ubogich rodzin.</div>
+              <div class="title">{{ fundations[0].name }}</div>
+              <div class="subtitle">{{  fundations[0].description }}</div>
             </div>
 
-            <div class="col"><div class="text">ubrania, jedzenie, sprzęt AGD, meble, zabawki</div></div>
+            <div class="col"><div class="text">{{ fundations[0].type }}</div></div>
           </li>
 
           <li>
             <div class="col">
-              <div class="title">Fundacja “Dla dzieci"</div>
-              <div class="subtitle">Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.</div>
+              <div class="title">{{ fundations[1].name }}</div>
+              <div class="subtitle">{{  fundations[1].description }}</div>
             </div>
 
-            <div class="col"><div class="text">ubrania, meble, zabawki</div></div>
+            <div class="col"><div class="text">{{ fundations[1].type }}</div></div>
           </li>
 
           <li>
             <div class="col">
-              <div class="title">Fundacja “Bez domu”</div>
-              <div class="subtitle">Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania</div>
+              <div class="title">{{ fundations[2].name }}</div>
+              <div class="subtitle">{{  fundations[2].description }}</div>
             </div>
 
-            <div class="col"><div class="text">ubrania, jedzenie, ciepłe koce</div></div>
+            <div class="col"><div class="text">{{ fundations[2].type }}</div></div>
           </li>
         </ul>
         <!-- Pagination
